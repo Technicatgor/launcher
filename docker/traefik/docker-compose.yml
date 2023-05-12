@@ -1,0 +1,65 @@
+version: '3.8'
+
+services:
+  traefik:
+    image: traefik:latest
+    container_name: traefik
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    networks:
+      - proxy
+    ports:
+      - 80:80
+      - 443:443
+      - 8080:8080
+    env_file:
+      - .env
+      # - CF_API_KEY=YOUR_API_KEY
+      # be sure to use the correct one depending on if you are using a token or key
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - ./data/traefik.yml:/traefik.yml:ro
+      - ./data/acme.json:/acme.json
+      - ./data/config.yml:/config.yml:ro
+      - ./usersfile:/usersfile:ro
+      - ./certs:/certs:ro
+    labels:
+      - "traefik.enable=true"
+        # local http section
+      - "traefik.http.routers.traefik-local.entrypoints=http"
+      - "traefik.http.routers.traefik-local.rule=Host(`traefik-dashboard.local.itcatgor.com`)"
+      - "traefik.http.routers.traefik-local.middlewares=traefik-https-redirect"
+        # local https section
+      - "traefik.http.routers.traefik-local-secure.entrypoints=https"
+      - "traefik.http.routers.traefik-local-secure.rule=Host(`traefik-dashboard.local.itcatgor.com`)"
+      - "traefik.http.routers.traefik-local-secure.service=api@internal"
+      - "traefik.http.routers.traefik-local-secure.tls.certresolver=cloudflare"
+      # - "traefik.http.routers.traefik-local-secure.tls.certificates.certfile=/certs/itcatgor.com.cert"
+      # - "traefik.http.routers.traefik-local-secure.tls.certificates.keyfile=/certs/itcatgor.com.key"
+      - "traefik.http.routers.traefik-local-secure.tls.domains[0].main=local.itcatgor.com"
+      - "traefik.http.routers.traefik-local-secure.tls.domains[0].sans=*.local.itcatgor.com"
+      - "traefik.http.routers.traefik-local-secure.tls=true"
+      - "traefik.http.routers.traefik-local-secure.middlewares=traefik-auth"
+        # external http section
+      - "traefik.http.routers.traefik.entrypoints=http"
+      - "traefik.http.routers.traefik.rule=Host(`test.itcatgor.com`)"
+      - "traefik.http.routers.traefik.middlewares=traefik-https-redirect"
+        # external https section
+      - "traefik.http.routers.traefik-secure.entrypoints=https"
+      - "traefik.http.routers.traefik-secure.rule=Host(`test.itcatgor.com`)"
+      - "traefik.http.routers.traefik-secure.middlewares=traefik-auth"
+      - "traefik.http.routers.traefik-secure.tls=true"
+      - "traefik.http.routers.traefik-secure.tls.certresolver=cloudflare"
+      - "traefik.http.routers.traefik-secure.tls.domains[0].main=test.itcatgor.com"
+      - "traefik.http.routers.traefik-secure.tls.domains[0].sans=*.test.itcatgor.com"
+      - "traefik.http.routers.traefik-secure.service=api@internal"
+        # middlewares section
+      - "traefik.http.middlewares.traefik-auth.basicauth.usersfile=./usersfile"
+      - "traefik.http.middlewares.traefik-https-redirect.redirectscheme.scheme=https"
+      - "traefik.http.middlewares.sslheader.headers.customrequestheaders.X-Forwarded-Proto=https"
+
+networks:
+  proxy:
+    external: true
