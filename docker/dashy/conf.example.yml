@@ -1,0 +1,100 @@
+appConfig:
+  theme: one-dark
+  layout: auto
+  iconSize: medium
+  language: en
+  webSearch:
+    searchEngine: google
+  statusCheck: true
+  statusCheckInterval: 60
+  customCss: |+
+
+pageInfo:
+  title: Technicatgor Dashboard
+  description: Welcome to Technicatgor Dashboard
+  navLinks:
+    - title: GitHub
+      path: https://github.com/Lissy93/dashy
+    - title: Docs
+      path: https://dashy.to/docs
+  footerText: Designed by Technicatgor
+sections:
+  - name: Today
+    icon: far fa-smile-beam
+    displayData:
+      collapsed: false
+      hideForGuests: false
+    widgets:
+      - type: clock
+        options:
+          timeZone: Asia/Hong_Kong
+          format: en-GB
+        id: 0_513_clock
+      - type: weather
+        options:
+          apiKey: efdbade728b37086877a5e83442004db
+          city: hongkong
+        id: 1_513_weather
+  - name: CPU
+    icon: fas fa-tachometer
+    widgets:
+      - type: gl-current-cpu
+        options:
+          hostname: https://pve-metrics.local.example.com
+        id: 0_232_glcurrentcpu
+  - name: Memory
+    icon: fas fa-tachometer
+    widgets:
+      - type: gl-current-mem
+        options:
+          hostname: https://pve-metrics.local.example.com
+        id: 0_633_glcurrentmem
+  - name: CPU History
+    icon: fas fa-microchip
+    displayData:
+      cols: 1
+    widgets:
+      - type: gl-cpu-history
+        options:
+          hostname: https://pve-metrics.local.example.com
+          limit: 60
+        id: 0_1018_glcpuhistory
+  - name: Productivity
+    displayData:
+      collapsed: false
+      cols: 2
+    items:
+      - title: CasaOS
+        description: Web site archiving
+        icon: hl-home-assistant
+        url: https://casa.local.example.com
+        id: 0_1302_casaos
+      - title: Proxmox
+        description: My Proxmox
+        icon: hl-proxmox
+        url: https://pve.local.example.com
+        statusCheckAllowInsecure: true
+        id: 1_1302_proxmox
+      - title: Pi-Hole
+        description: DNS settings for ad & tracker blocking
+        icon: hl-pihole
+        url: https://pihole.local.example.com
+        id: 5_1302_pihole
+      - title: Uptime-Kuma
+        description: monitoring with ping
+        icon: hl-uptime-kuma
+        url: https://kuma.local.example.com
+        statusCheck: true
+        id: 6_1302_uptimekuma
+      - title: Grafana
+        description: Data visualised on dashboards
+        icon: hl-grafana
+        url: https://grafana.local.example.com
+        target: newtab
+        id: 7_1302_grafana
+      - title: Longhorn
+        description: Data visualised on dashboards
+        icon: hl-longhorn
+        url: https://longhorn.local.example.com
+        target: newtab
+        id: 8_1302_longhorn

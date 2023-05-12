@@ -1,0 +1,132 @@
+appConfig:
+  theme: one-dark
+  layout: auto
+  iconSize: medium
+  language: en
+  webSearch:
+    searchEngine: google
+  statusCheck: true
+  statusCheckInterval: 60
+  customCss: |+
+
+pageInfo:
+  title: HomeLAB Dashboard
+  description: Welcome to HomeLAB Dashboard
+  navLinks:
+    - title: GitHub
+      path: https://github.com/Lissy93/dashy
+    - title: Docs
+      path: https://dashy.to/docs
+  footerText: Designed by CAT GOR
+sections:
+  - name: Today
+    icon: far fa-smile-beam
+    displayData:
+      collapsed: false
+      hideForGuests: false
+    widgets:
+      - type: clock
+        options:
+          timeZone: Asia/Hong_Kong
+          format: en-GB
+        id: 0_513_clock
+      - type: weather
+        options:
+          apiKey: efdbade728b37086877a5e83442004db
+          city: hongkong
+        id: 1_513_weather
+  - name: CPU
+    icon: fas fa-tachometer
+    widgets:
+      - type: gl-current-cpu
+        options:
+          hostname: https://pve-metrics.local.itcatgor.com
+        id: 0_232_glcurrentcpu
+  - name: Memory
+    icon: fas fa-tachometer
+    widgets:
+      - type: gl-current-mem
+        options:
+          hostname: https://pve-metrics.local.itcatgor.com
+        id: 0_633_glcurrentmem
+  - name: CPU History
+    icon: fas fa-microchip
+    displayData:
+      cols: 1
+    widgets:
+      - type: gl-cpu-history
+        options:
+          hostname: https://pve-metrics.local.itcatgor.com
+          limit: 60
+        id: 0_1018_glcpuhistory
+  - name: Productivity
+    displayData:
+      collapsed: false
+      cols: 2
+    items:
+      - title: CasaOS
+        description: Web site archiving
+        icon: hl-home-assistant
+        url: https://casa.local.itcatgor.com
+        id: 0_1302_casaos
+      - title: Proxmox
+        description: My Proxmox
+        icon: hl-proxmox
+        url: https://pve.local.itcatgor.com
+        statusCheckAllowInsecure: true
+        id: 1_1302_proxmox
+      - title: Trilium
+        description: Self-hosted Note
+        icon: hl-trilium
+        url: http://192.168.50.19:9080
+        target: newtab
+        id: 2_1302_trilium
+      - title: Synology
+        description: Synology
+        icon: hl-synology
+        url: https://192.168.50.50:5001
+        target: newtab
+        statusCheckAllowInsecure: true
+        id: 3_1302_synology
+      - title: pfsense
+        description: Firewall Central Management
+        icon: hl-pfsense
+        url: https://10.8.8.8:8888
+        target: newtab
+        statusCheckAllowInsecure: true
+        id: 4_1302_pfsense
+      - title: Pi-Hole
+        description: DNS settings for ad & tracker blocking
+        icon: hl-pihole
+        url: https://pihole.local.itcatgor.com
+        id: 5_1302_pihole
+      - title: Uptime-Kuma
+        description: monitoring with ping
+        icon: hl-uptime-kuma
+        url: https://kuma.local.itcatgor.com
+        statusCheck: true
+        id: 6_1302_uptimekuma
+      - title: Grafana
+        description: Data visualised on dashboards
+        icon: hl-grafana
+        url: https://grafana.local.itcatgor.com
+        target: newtab
+        id: 7_1302_grafana
+      - title: Longhorn
+        description: Data visualised on dashboards
+        icon: hl-longhorn
+        url: https://longhorn.local.itcatgor.com
+        target: newtab
+        id: 8_1302_longhorn
+      - title: Portainer
+        description: Docker container management
+        icon: hl-portainer
+        url: https://192.168.50.19:9443
+        statusCheckAllowInsecure: true
+        id: 9_1302_portainer
+      - title: Dozzle
+        description: Docker container web log viewer
+        icon: hl-dozzle
+        url: http://192.168.50.19:8081
+        target: newtab
+        id: 10_1302_dozzle
