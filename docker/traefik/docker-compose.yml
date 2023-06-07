@@ -41,7 +41,8 @@ services:
       - "traefik.http.routers.traefik-local-secure.tls.domains[0].main=local.itcatgor.com"
       - "traefik.http.routers.traefik-local-secure.tls.domains[0].sans=*.local.itcatgor.com"
       - "traefik.http.routers.traefik-local-secure.tls=true"
-      - "traefik.http.routers.traefik-local-secure.middlewares=traefik-auth"
+      - "traefik.http.routers.traefik-local-secure.middlewares=traefik-local-auth"
+      - "traefik.http.middlewares.traefik-local-auth.basicauth.usersfile=./usersfile"
         # external http section
       - "traefik.http.routers.traefik.entrypoints=http"
       - "traefik.http.routers.traefik.rule=Host(`test.itcatgor.com`)"

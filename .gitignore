@@ -3,3 +3,4 @@
 conf.yml
 docker/traefik/data
 usersfile
+config
