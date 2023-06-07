@@ -1,0 +1,7 @@
+version: '3'
+services:
+  nginx:
+    image: nginx
+    container_name: my-nginx
+    ports:
+      - "7777:80"
