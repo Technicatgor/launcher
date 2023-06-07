@@ -6,4 +6,4 @@ services:
     ports:
       - "7000:80"
     volumes:
-      - ./html:/usr/share/nginx/html
+      - $PWD/html:/usr/share/nginx/html
