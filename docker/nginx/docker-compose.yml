@@ -4,4 +4,6 @@ services:
     image: nginx
     container_name: my-nginx
     ports:
-      - "7777:80"
+      - "7000:80"
+    volumes:
+      - ./html:/usr/share/nginx/html
