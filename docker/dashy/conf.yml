@@ -73,7 +73,8 @@ sections:
         description: My Proxmox
         icon: hl-proxmox
         url: https://pve.local.itcatgor.com
-        statusCheckAllowInsecure: true
+        target: newtab
+        statusCheck: false
         id: 1_1302_proxmox
       - title: Trilium
         description: Self-hosted Note
@@ -104,7 +105,9 @@ sections:
         description: monitoring with ping
         icon: hl-uptime-kuma
         url: https://kuma.local.itcatgor.com
+        target: newtab
         statusCheck: true
+        statusCheckAllowInsecure: false
         id: 6_1302_uptimekuma
       - title: Grafana
         description: Data visualised on dashboards
@@ -122,6 +125,7 @@ sections:
         description: Docker container management
         icon: hl-portainer
         url: https://192.168.50.19:9443
+        statusCheck: true
         statusCheckAllowInsecure: true
         id: 9_1302_portainer
       - title: Dozzle
