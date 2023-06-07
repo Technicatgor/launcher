@@ -1,0 +1,40 @@
+version: '3.2'
+
+volumes:
+  certs:
+
+networks:
+  proxy:
+    external: true
+
+services:
+  traefik:
+    container_name: traefik
+    image: traefik:latest
+    ports:
+      - 80:80
+      - 443:443
+    environment:
+      - CF_API_EMAIL
+      - CF_DNS_API_TOKEN
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - certs:/certs:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    restart: always
+    networks:
+      - proxy
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.middlewares.traefik-https-redirect.redirectscheme.scheme=websecure"
+      - "traefik.http.middlewares.sslheader.headers.customrequestheaders.X-Forwarded-Proto=https"
+      - "traefik.http.routers.traefik-secure.entrypoints=web,websecure"
+      - "traefik.http.routers.traefik-secure.rule=Host(`traefik.local.${MY_DOMAIN}`)"
+      - "traefik.http.routers.traefik-secure.tls=true"
+      - "traefik.http.routers.traefik-secure.service=api@internal"
+      - "traefik.http.routers.traefik-secure.tls.certresolver=cloudflare"
+      - "traefik.http.routers.traefik-secure.tls.domains[0].main=`local.${MY_DOMAIN}`"
+      - "traefik.http.routers.traefik-secure.tls.domains[0].sans=`*.local.${MY_DOMAIN}`"
+      - "traefik.http.middlewares.ratelimit.ratelimit.average=100"
+      - "traefik.http.middlewares.ratelimit.ratelimit.burst=50"
+      - "traefik.http.middlewares.ratelimit.ratelimit.period=1m"
