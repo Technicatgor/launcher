@@ -42,7 +42,11 @@ services:
       - SEMAPHORE_ADMIN_EMAIL
       - SEMAPHORE_ADMIN
       - SEMAPHORE_ACCESS_KEY_ENCRYPTION
+    volumes:
+      - ./inventory/:/inventory:ro
+      - ./authorized-keys/:/authorized-keys:ro
+      - ./config/:/etc/semaphore:rw
     depends_on:
       - postgres
 volumes:
-  semaphore-postgres: 
+  semaphore-postgres:
