@@ -25,10 +25,12 @@ services:
   #     MYSQL_USER: semaphore
   #     MYSQL_PASSWORD: semaphore
   semaphore:
+    container_name: semaphore
     restart: unless-stopped
     ports:
       - 3001:3000
     image: semaphoreui/semaphore:latest
+    user: "${UID}:${GID}"
     environment:
       - SEMAPHORE_DB_USER
       - SEMAPHORE_DB_PASS
@@ -50,3 +52,4 @@ services:
       - postgres
 volumes:
   semaphore-postgres:
+    driver: local
