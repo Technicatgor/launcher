@@ -30,7 +30,7 @@ services:
     ports:
       - 3001:3000
     image: semaphoreui/semaphore:latest
-    user: "${UID}:${GID}"
+    user: ${UID}:${GID}
     environment:
       - SEMAPHORE_DB_USER
       - SEMAPHORE_DB_PASS
@@ -44,10 +44,11 @@ services:
       - SEMAPHORE_ADMIN_EMAIL
       - SEMAPHORE_ADMIN
       - SEMAPHORE_ACCESS_KEY_ENCRYPTION
-    volumes:
-      - ./inventory/:/inventory:ro
-      - ./authorized-keys/:/authorized-keys:ro
-      - ./config/:/etc/semaphore:rw
+      - ANSIBLE_HOST_KEY_CHECKING
+    # volumes:
+    #   - ./inventory/:/inventory:ro
+    #   - ./authorized-keys/:/authorized-keys:ro
+    #   - ./config/:/etc/semaphore:rw
     depends_on:
       - postgres
 volumes:
