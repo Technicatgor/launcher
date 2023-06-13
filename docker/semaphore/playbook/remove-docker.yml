@@ -13,6 +13,9 @@
       file:
         path: "{{ item }}"
         state: absent
+      with_items: 
+        - /usr/bin/docker-compose
+        - /usr/local/bin/docker-compose
 
     - name: Uninstall Docker
       apt:
