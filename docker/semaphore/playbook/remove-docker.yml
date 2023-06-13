@@ -11,7 +11,7 @@
 
     - name: Remove Docker Compose binary
       file:
-        path: /usr/local/bin/docker-compose
+        path: "{{ item }}"
         state: absent
 
     - name: Uninstall Docker
