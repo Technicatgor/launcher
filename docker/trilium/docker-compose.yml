@@ -1,0 +1,16 @@
+version: '3.9'
+services:
+  trilium:
+    image: zadam/trilium
+    restart: always
+    ports:
+      - "9080:8080"
+    volumes:
+      - nfs-volume:/home/node/trilium-data
+    network_mode: bridge
+volumes:
+  nfs-volume:
+    driver_opts:
+      type: "nfs"
+      o: "addr=192.168.50.50,nfsvers=4"
+      device: ":/volume1/docker/data/trilium"
