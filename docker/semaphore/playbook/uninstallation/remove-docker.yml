@@ -1,6 +1,6 @@
 ---
 - name: Remove Docker and Docker Compose
-  hosts: jarvis
+  hosts: all
   become: true
   tasks:
     - name: Stop docker server
@@ -13,7 +13,7 @@
       file:
         path: "{{ item }}"
         state: absent
-      with_items: 
+      with_items:
         - /usr/bin/docker-compose
         - /usr/local/bin/docker-compose
 
