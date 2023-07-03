@@ -1,0 +1,15 @@
+- hosts: "all"
+  # become_user: "root"
+  become: yes
+  tasks:
+  - name: Comment out DNS stub listener in config
+    lineinfile:
+      path: /etc/systemd/resolved.conf
+      regexp: "^#?DNSStubListener=yes"
+      line: "DNSStubListener=no"
+      state: present
+
+  - name: Restart systemd-resolved
+    systemd:
+      name: systemd-resolved.service
+      state: restarted

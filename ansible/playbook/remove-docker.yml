@@ -1,0 +1,23 @@
+---
+- name: Remove Docker and Docker Compose
+  hosts: all
+  become: true
+  tasks:
+    - name: Stop and remove running Docker containers
+      docker_container:
+        state: absent
+
+    - name: Remove Docker Compose binary
+      file:
+        path: /usr/local/bin/docker-compose
+        state: absent
+
+    - name: Uninstall Docker
+      apt:
+        name: docker-ce
+        state: absent
+
+    - name: Remove Docker APT repository
+      apt_repository:
+        repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ ansible_lsb.codename }} stable
+        state: absent
