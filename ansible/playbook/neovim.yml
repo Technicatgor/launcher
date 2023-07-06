@@ -1,0 +1,57 @@
+---
+- name: Install NeoVim
+  hosts: all
+  become: yes
+
+  tasks:
+    - name: apt update
+      apt:
+        update_cache: yes
+        upgrade: yes
+
+    - name: Install dependencies
+      apt:
+        name:
+          - curl
+          - make
+          - build-essential
+        state: present
+
+    - name: Install the neovim repo
+      apt_repository:
+        repo: "ppa:neovim-ppa/unstable"
+        state: present
+        update_cache: yes
+    - name: Install the neovim
+      apt:
+        name: neovim
+        state: present
+    - name: check if lvim installe
+      become: false
+      stat:
+        path: $HOME/.local/bin/lvim
+      register: lvim_app
+    - name: Install LunarVim
+      become: false
+      shell:
+        curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh | bash -
+      when: lvim_app.stat.exists == false
+
+    - name: add vim alias for lvim
+      become: false
+      lineinfile:
+        path: $HOME/.bashrc
+        line: "{{ item }}"
+      loop:
+        - alias vim='lvim'
+        - export PATH=/home/heston/.local/bin:$PATH
+
+    - name: Source .bashrc
+      shell: "source /home/heston/.bashrc"
+      args:
+        executable: /bin/bash
+
+    - name: download config
+      become: false
+      shell:
+        curl -fLo "$HOME/.config/lvim/config.lua" --create-dirs 'https://raw.githubusercontent.com/Technicatgor/launcher/main/lunarvim/config.lua'
