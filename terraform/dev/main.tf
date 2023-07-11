@@ -14,6 +14,7 @@ variable "ssh_key" {
 resource "proxmox_vm_qemu" "k8s-1" {
   count       = 1
   name        = "k8s-0${count.index + 1}"
+  vmid        = "100${count.index + 1}"
   target_node = var.proxmox_node
   clone       = var.cloudinit_template_name
   agent       = 1
