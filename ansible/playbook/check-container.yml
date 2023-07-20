@@ -1,0 +1,24 @@
+---
+- name: Check all container running
+  hosts: all
+  become: yes
+  vars:
+    container_names:
+      - portainer
+      - watchtower
+      - test
+
+  tasks:
+    - name: Check if Docker containers are running
+      shell: docker ps -q --filter "name={{ item }}"
+      register: containers_running
+      ignore_errors: true
+      loop:
+        - portainer
+        - watchtower
+        - test
+
+
+    - name: Start Docker containers if not running
+      shell: |
+        echo test
