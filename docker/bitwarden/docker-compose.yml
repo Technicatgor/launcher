@@ -1,0 +1,19 @@
+version: "3.9"
+
+services:
+  bitwarden:
+    image: vaultwarden/server:latest
+    ports:
+      - "9090:80"
+    restart: always
+    environment:
+      - SIGNUPS_ALLOWED=false
+    volumes:
+      - nfs-volume:/data
+
+volumes:
+  nfs-volume:
+    driver_opts:
+      type: "nfs"
+      o: "addr=192.168.50.50,nfsvers=4"
+      device: ":/volume1/docker/data/bitwarden"

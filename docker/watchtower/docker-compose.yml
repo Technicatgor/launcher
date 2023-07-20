@@ -9,6 +9,9 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     environment:
+      DOCKER_HOST: "tcp://10.0.50.11:2375"
+      WATCHTOWER_HTTP_API_TOKEN: ${API_TOKEN}
+      WATCHTOWER_HTTP_METRICS: "true"
       WATCHTOWER_SCHEDULE: "0 0 1 * * *"
       TZ: Asia/Hong_Kong
       WATCHTOWER_CLEANUP: "true"
