@@ -1,0 +1,742 @@
+{
+  "schemaVersion": 1,
+  "configProperties": {
+    "name": "default"
+  },
+  "categories": [
+    {
+      "id": "15431156-cf1d-4381-b266-c6e3fd61b8d1",
+      "name": "Docker Service",
+      "position": 1
+    },
+    {
+      "id": "7358f60d-2d61-4c84-9802-ad06c5f64ab0",
+      "name": "My K3s Cluster",
+      "position": 2
+    }
+  ],
+  "wrappers": [
+    {
+      "id": "default",
+      "position": 0
+    },
+    {
+      "id": "abaabc02-1129-4da1-9893-6ae7f5c590dc",
+      "position": 2
+    },
+    {
+      "id": "35264804-a480-4af9-93cf-a90f2992c614",
+      "position": 2
+    }
+  ],
+  "apps": [
+    {
+      "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a990",
+      "name": "Donate",
+      "url": "https://ko-fi.com/ajnart",
+      "behaviour": {
+        "onClickUrl": "https://ko-fi.com/ajnart",
+        "externalUrl": "https://ko-fi.com/ajnart",
+        "isOpeningNewTab": true,
+        "tooltipDescription": "Please consider making a donation"
+      },
+      "network": {
+        "enabledStatusChecker": false,
+        "statusCodes": [
+          "200"
+        ]
+      },
+      "appearance": {
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/ko-fi.png",
+        "appNameStatus": "normal",
+        "positionAppName": "row-reverse",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      },
+      "area": {
+        "type": "wrapper",
+        "properties": {
+          "id": "default"
+        }
+      },
+      "shape": {
+        "md": {
+          "location": {
+            "x": 4,
+            "y": 1
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        },
+        "sm": {
+          "location": {
+            "x": 2,
+            "y": 4
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        },
+        "lg": {
+          "location": {
+            "x": 8,
+            "y": 0
+          },
+          "size": {
+            "width": 2,
+            "height": 1
+          }
+        }
+      }
+    },
+    {
+      "id": "5df743d9-5cb1-457c-85d2-64ff86855652",
+      "name": "Documentation",
+      "url": "https://homarr.dev",
+      "behaviour": {
+        "onClickUrl": "https://homarr.dev",
+        "externalUrl": "https://homarr.dev",
+        "isOpeningNewTab": true
+      },
+      "network": {
+        "enabledStatusChecker": false,
+        "statusCodes": [
+          "200"
+        ]
+      },
+      "appearance": {
+        "iconUrl": "/imgs/logo/logo.png",
+        "appNameStatus": "normal",
+        "positionAppName": "column",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      },
+      "area": {
+        "type": "wrapper",
+        "properties": {
+          "id": "default"
+        }
+      },
+      "shape": {
+        "md": {
+          "location": {
+            "x": 5,
+            "y": 1
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        },
+        "sm": {
+          "location": {
+            "x": 0,
+            "y": 1
+          },
+          "size": {
+            "width": 1,
+            "height": 2
+          }
+        },
+        "lg": {
+          "location": {
+            "x": 8,
+            "y": 2
+          },
+          "size": {
+            "width": 2,
+            "height": 2
+          }
+        }
+      }
+    },
+    {
+      "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a330",
+      "name": "Contribute",
+      "url": "https://github.com/ajnart/homarr",
+      "behaviour": {
+        "onClickUrl": "https://github.com/ajnart/homarr",
+        "externalUrl": "https://github.com/ajnart/homarr",
+        "isOpeningNewTab": true,
+        "tooltipDescription": ""
+      },
+      "network": {
+        "enabledStatusChecker": false,
+        "statusCodes": []
+      },
+      "appearance": {
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/github.png",
+        "appNameStatus": "normal",
+        "positionAppName": "row-reverse",
+        "lineClampAppName": 2,
+        "appNameFontSize": 16
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      },
+      "area": {
+        "type": "wrapper",
+        "properties": {
+          "id": "default"
+        }
+      },
+      "shape": {
+        "md": {
+          "location": {
+            "x": 3,
+            "y": 2
+          },
+          "size": {
+            "width": 2,
+            "height": 1
+          }
+        },
+        "sm": {
+          "location": {
+            "x": 1,
+            "y": 3
+          },
+          "size": {
+            "width": 2,
+            "height": 1
+          }
+        },
+        "lg": {
+          "location": {
+            "x": 2,
+            "y": 8
+          },
+          "size": {
+            "width": 2,
+            "height": 1
+          }
+        }
+      }
+    },
+    {
+      "id": "47af36c0-47c1-4e5b-bfc7-ad645ee6a337",
+      "name": "Discord",
+      "url": "https://discord.com/invite/aCsmEV5RgA",
+      "behaviour": {
+        "onClickUrl": "https://discord.com/invite/aCsmEV5RgA",
+        "isOpeningNewTab": true,
+        "externalUrl": "https://discord.com/invite/aCsmEV5RgA",
+        "tooltipDescription": "Join our Discord server! We're waiting for your ideas and feedback. "
+      },
+      "network": {
+        "enabledStatusChecker": false,
+        "statusCodes": [
+          "200"
+        ]
+      },
+      "appearance": {
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@master/png/discord.png",
+        "appNameStatus": "normal",
+        "positionAppName": "row-reverse",
+        "lineClampAppName": 1,
+        "appNameFontSize": 16
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      },
+      "area": {
+        "type": "wrapper",
+        "properties": {
+          "id": "default"
+        }
+      },
+      "shape": {
+        "md": {
+          "location": {
+            "x": 4,
+            "y": 3
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        },
+        "sm": {
+          "location": {
+            "x": 1,
+            "y": 4
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        },
+        "lg": {
+          "location": {
+            "x": 8,
+            "y": 1
+          },
+          "size": {
+            "width": 2,
+            "height": 1
+          }
+        }
+      }
+    },
+    {
+      "id": "591f6784-ec8b-41f3-9ae4-a470d145782b",
+      "name": "Nginx",
+      "url": "https://nginx.local.itcatgor.com",
+      "appearance": {
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/nginx.png",
+        "appNameStatus": "normal",
+        "appNameFontSize": 16,
+        "positionAppName": "column",
+        "lineClampAppName": 1
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200",
+          "301",
+          "302",
+          "304",
+          "307",
+          "308"
+        ]
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "https://nginx.local.itcatgor.com"
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "15431156-cf1d-4381-b266-c6e3fd61b8d1"
+        }
+      },
+      "shape": {
+        "md": {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        },
+        "lg": {
+          "location": {
+            "x": 0,
+            "y": 8
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      }
+    },
+    {
+      "id": "2e2ff6fd-6323-4415-b08c-539f9e0936f9",
+      "name": "Grafana",
+      "url": "https://grafana.local.itcatgor.com",
+      "appearance": {
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/grafana.png",
+        "appNameStatus": "normal",
+        "appNameFontSize": 16,
+        "positionAppName": "column",
+        "lineClampAppName": 1
+      },
+      "network": {
+        "enabledStatusChecker": true,
+        "statusCodes": [
+          "200",
+          "301",
+          "302",
+          "304",
+          "307",
+          "308"
+        ]
+      },
+      "behaviour": {
+        "isOpeningNewTab": true,
+        "externalUrl": "https://grafana.local.itcatgor.com"
+      },
+      "area": {
+        "type": "category",
+        "properties": {
+          "id": "7358f60d-2d61-4c84-9802-ad06c5f64ab0"
+        }
+      },
+      "shape": {
+        "md": {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        },
+        "lg": {
+          "location": {
+            "x": 1,
+            "y": 6
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      },
+      "integration": {
+        "type": null,
+        "properties": []
+      }
+    }
+  ],
+  "widgets": [
+    {
+      "id": "fad86ce4-07eb-44a1-b06b-7d9bd509597e",
+      "type": "iframe",
+      "properties": {
+        "embedUrl": "https://grafana.local.itcatgor.com/d-solo/919b92a8e8041bd567af9edab12c840c/kubernetes-persistent-volumes?orgId=1&refresh=1h&from=1696755691548&to=1696842091548&panelId=2\" width=\"450\" height=\"200\" frameborder=\"0\"",
+        "allowFullScreen": false,
+        "allowScrolling": true,
+        "allowTransparency": false,
+        "allowPayment": false,
+        "allowAutoPlay": false,
+        "allowMicrophone": false,
+        "allowCamera": false,
+        "allowGeolocation": false
+      },
+      "area": {
+        "type": "wrapper",
+        "properties": {
+          "id": "default"
+        }
+      },
+      "shape": {
+        "sm": {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        },
+        "md": {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "width": 3,
+            "height": 2
+          }
+        },
+        "lg": {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "width": 5,
+            "height": 2
+          }
+        }
+      }
+    },
+    {
+      "id": "86b1921f-efa7-410f-92dd-79553bf3264d",
+      "type": "notebook",
+      "properties": {
+        "showToolbar": true,
+        "content": "<h2><strong>Homarr's</strong> notebook</h2><p>Use it as your Todo list, ideas to think about, as a \"getting-started\" guide for your users or even as your secret journal to confess your crushes, it stays private our your <strong>Homarr</strong> instance.</p><p>The <code>notebook</code> widget focuses on usability and is designed to be as simple as possible to bring a familiar editing experience to regular users. It is based on <a target=\"_blank\" rel=\"noopener noreferrer nofollow\" href=\"https://tiptap.dev/\">Tiptap.dev</a> and supports all of its features:</p><ul><li><p>General text formatting: <strong>bold</strong>, <em>italic</em>, underline, <s>strike-through</s></p></li><li><p>Headings (h1-h6)</p></li><li><p>Sub and super scripts (&lt;sup /&gt; and &lt;sub /&gt; tags)</p></li><li><p>Ordered and bullet lists</p></li><li><p>Text align</p></li></ul>"
+      },
+      "area": {
+        "type": "wrapper",
+        "properties": {
+          "id": "default"
+        }
+      },
+      "shape": {
+        "sm": {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "width": 3,
+            "height": 2
+          }
+        },
+        "md": {
+          "location": {
+            "x": 0,
+            "y": 2
+          },
+          "size": {
+            "width": 3,
+            "height": 2
+          }
+        },
+        "lg": {
+          "location": {
+            "x": 0,
+            "y": 5
+          },
+          "size": {
+            "width": 6,
+            "height": 3
+          }
+        }
+      }
+    },
+    {
+      "id": "f8946e61-4d0b-4b4e-bedb-adada4b888fd",
+      "type": "calendar",
+      "properties": {
+        "hideWeekDays": true,
+        "showUnmonitored": false,
+        "useSonarrv4": false,
+        "sundayStart": false,
+        "radarrReleaseType": "inCinemas",
+        "fontSize": "xs"
+      },
+      "area": {
+        "type": "sidebar",
+        "properties": {
+          "location": "left"
+        }
+      },
+      "shape": {
+        "sm": {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "width": 2,
+            "height": 2
+          }
+        },
+        "md": {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "width": 2,
+            "height": 2
+          }
+        },
+        "lg": {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "width": 2,
+            "height": 2
+          }
+        }
+      }
+    },
+    {
+      "id": "f252768d-9e69-491b-b6b4-8cad04fa30e8",
+      "type": "date",
+      "properties": {
+        "display24HourFormat": true,
+        "dateFormat": "dddd, D MMMM",
+        "enableTimezone": true,
+        "timezoneLocation": {
+          "name": "Hong Kong",
+          "longitude": "",
+          "latitude": ""
+        },
+        "titleState": "none"
+      },
+      "area": {
+        "type": "sidebar",
+        "properties": {
+          "location": "left"
+        }
+      },
+      "shape": {
+        "sm": {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        },
+        "md": {
+          "location": {
+            "x": 0,
+            "y": 2
+          },
+          "size": {
+            "width": 2,
+            "height": 1
+          }
+        },
+        "lg": {
+          "location": {
+            "x": 0,
+            "y": 2
+          },
+          "size": {
+            "width": 2,
+            "height": 1
+          }
+        }
+      }
+    },
+    {
+      "id": "1966704d-0511-4997-ab0b-3fbd373bd894",
+      "type": "dashdot",
+      "properties": {
+        "dashName": "Dash.",
+        "url": "https://dash.local.itcatgor.com/",
+        "usePercentages": true,
+        "columns": 4,
+        "graphHeight": 160,
+        "graphsOrder": [
+          {
+            "key": "cpu",
+            "subValues": {
+              "enabled": true,
+              "multiView": false,
+              "span": 2
+            }
+          },
+          {
+            "key": "ram",
+            "subValues": {
+              "enabled": true,
+              "span": 2
+            }
+          },
+          {
+            "key": "network",
+            "subValues": {
+              "enabled": true,
+              "compactView": true,
+              "span": 2
+            }
+          },
+          {
+            "key": "storage",
+            "subValues": {
+              "enabled": true,
+              "compactView": true,
+              "span": 2,
+              "multiView": false
+            }
+          },
+          {
+            "key": "gpu",
+            "subValues": {
+              "enabled": false,
+              "span": 1
+            }
+          }
+        ]
+      },
+      "area": {
+        "type": "sidebar",
+        "properties": {
+          "location": "left"
+        }
+      },
+      "shape": {
+        "sm": {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "width": 2,
+            "height": 2
+          }
+        },
+        "md": {
+          "location": {
+            "x": 0,
+            "y": 3
+          },
+          "size": {
+            "width": 2,
+            "height": 3
+          }
+        },
+        "lg": {
+          "location": {
+            "x": 0,
+            "y": 3
+          },
+          "size": {
+            "width": 2,
+            "height": 3
+          }
+        }
+      }
+    }
+  ],
+  "settings": {
+    "common": {
+      "searchEngine": {
+        "type": "custom",
+        "properties": {
+          "template": "https://google.com/search?q="
+        }
+      }
+    },
+    "customization": {
+      "layout": {
+        "enabledLeftSidebar": true,
+        "enabledRightSidebar": false,
+        "enabledDocker": true,
+        "enabledPing": true,
+        "enabledSearchbar": true
+      },
+      "pageTitle": "Homarr ⭐️",
+      "logoImageUrl": "/imgs/logo/logo.png",
+      "faviconUrl": "/imgs/favicon/favicon-squared.png",
+      "backgroundImageUrl": "",
+      "customCss": "",
+      "colors": {
+        "primary": "red",
+        "secondary": "yellow",
+        "shade": 7
+      },
+      "appOpacity": 100,
+      "gridstack": {
+        "columnCountSmall": 3,
+        "columnCountMedium": 6,
+        "columnCountLarge": 10
+      }
+    }
+  }
+}
