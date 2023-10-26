@@ -11,12 +11,12 @@ services:
     environment:
       DOCKER_HOST: "tcp://10.0.50.11:2375"
       WATCHTOWER_HTTP_API_TOKEN: ${API_TOKEN}
-      WATCHTOWER_HTTP_METRICS: "true"
+      WATCHTOWER_HTTP_API_METRICS: true
       WATCHTOWER_SCHEDULE: "0 0 1 * * *"
       TZ: Asia/Hong_Kong
-      WATCHTOWER_CLEANUP: "true"
-      WATCHTOWER_DEBUG: "true"
-      WATCHTOWER_NOTIFICATION_REPORT: "true"
+      WATCHTOWER_CLEANUP: true
+      WATCHTOWER_DEBUG: true
+      WATCHTOWER_NOTIFICATION_REPORT: true
       WATCHTOWER_NOTIFICATION_URL: "discord://${TOKEN}@${CHANNEL_ID}"
       WATCHTOWER_NOTIFICATION_TEMPLATE: |
         {{- if .Report -}}
@@ -38,5 +38,4 @@ services:
         {{- else -}}
           {{range .Entries -}}{{.Message}}{{"\n"}}{{- end -}}
         {{- end -}}
-
 

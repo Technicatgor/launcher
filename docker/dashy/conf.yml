@@ -79,15 +79,17 @@ sections:
       - title: Trilium
         description: Self-hosted Note
         icon: hl-trilium
-        url: http://192.168.50.19:9080
+        url: https://notes.on9isation.xyz
         target: newtab
+        statusCheck: true
         id: 2_1302_trilium
       - title: Synology
         description: Synology
         icon: hl-synology
-        url: https://192.168.50.50:5001
+        url: https://nas.local.itcatgor.com
         target: newtab
         statusCheckAllowInsecure: true
+        statusCheck: true
         id: 3_1302_synology
       - title: pfsense
         description: Firewall Central Management
@@ -100,14 +102,16 @@ sections:
         description: DNS settings for ad & tracker blocking
         icon: hl-pihole
         url: https://pihole.local.itcatgor.com
+        target: newtab
+        statusCheck: true
+        statusCheckAllowInsecure: true
         id: 5_1302_pihole
       - title: Uptime-Kuma
         description: monitoring with ping
         icon: hl-uptime-kuma
-        url: https://kuma.local.itcatgor.com
+        url: https://uptime.local.itcatgor.com
         target: newtab
         statusCheck: true
-        statusCheckAllowInsecure: false
         id: 6_1302_uptimekuma
       - title: Grafana
         description: Data visualised on dashboards
@@ -124,13 +128,14 @@ sections:
       - title: Portainer
         description: Docker container management
         icon: hl-portainer
-        url: https://192.168.50.19:9443
+        url: https://portainer.local.itcatgor.com
         statusCheck: true
         statusCheckAllowInsecure: true
         id: 9_1302_portainer
       - title: Dozzle
         description: Docker container web log viewer
         icon: hl-dozzle
-        url: http://192.168.50.19:8081
+        url: http://dozzle.local.itcatgor.com
         target: newtab
+        statusCheck: true
         id: 10_1302_dozzle
