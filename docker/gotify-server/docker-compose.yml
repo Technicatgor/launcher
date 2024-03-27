@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+    server:
+        image: gotify/server
+        volumes:
+            - './gotify/data:/app/data'
+        environment:
+            - TZ=Asia/Hong_Kong
+        ports:
+            - '82:80'

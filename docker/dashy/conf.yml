@@ -17,13 +17,14 @@ pageInfo:
       path: https://github.com/Lissy93/dashy
     - title: Docs
       path: https://dashy.to/docs
-  footerText: Designed by CAT GOR
+  footerText: Designed by Technicat
 sections:
   - name: Today
     icon: far fa-smile-beam
     displayData:
       collapsed: false
       hideForGuests: false
+      cols: 1
     widgets:
       - type: clock
         options:
@@ -35,47 +36,25 @@ sections:
           apiKey: efdbade728b37086877a5e83442004db
           city: hongkong
         id: 1_513_weather
-  - name: CPU
-    icon: fas fa-tachometer
-    widgets:
-      - type: gl-current-cpu
-        options:
-          hostname: https://pve-metrics.local.itcatgor.com
-        id: 0_232_glcurrentcpu
-  - name: Memory
-    icon: fas fa-tachometer
-    widgets:
-      - type: gl-current-mem
-        options:
-          hostname: https://pve-metrics.local.itcatgor.com
-        id: 0_633_glcurrentmem
-  - name: CPU History
-    icon: fas fa-microchip
-    displayData:
-      cols: 1
-    widgets:
-      - type: gl-cpu-history
-        options:
-          hostname: https://pve-metrics.local.itcatgor.com
-          limit: 60
-        id: 0_1018_glcpuhistory
   - name: Productivity
     displayData:
       collapsed: false
-      cols: 2
+      cols: 3
     items:
-      - title: CasaOS
-        description: Web site archiving
-        icon: hl-home-assistant
-        url: https://casa.local.itcatgor.com
-        id: 0_1302_casaos
-      - title: Proxmox
+      - title: Proxmox Main
         description: My Proxmox
         icon: hl-proxmox
         url: https://pve.local.itcatgor.com
         target: newtab
         statusCheck: false
-        id: 1_1302_proxmox
+        id: 0_1302_proxmoxmain
+      - title: Proxmox mini
+        description: Proxmox2
+        icon: hl-proxmox
+        url: https://pve2.local.itcatgor.com
+        target: newtab
+        statusCheck: false
+        id: 1_1302_proxmoxmini
       - title: Trilium
         description: Self-hosted Note
         icon: hl-trilium
@@ -88,7 +67,6 @@ sections:
         icon: hl-synology
         url: https://nas.local.itcatgor.com
         target: newtab
-        statusCheckAllowInsecure: true
         statusCheck: true
         id: 3_1302_synology
       - title: pfsense
@@ -101,7 +79,7 @@ sections:
       - title: Pi-Hole
         description: DNS settings for ad & tracker blocking
         icon: hl-pihole
-        url: https://pihole.local.itcatgor.com
+        url: https://pihole.local.itcatgor.com/admin
         target: newtab
         statusCheck: true
         statusCheckAllowInsecure: true
@@ -119,23 +97,56 @@ sections:
         url: https://grafana.local.itcatgor.com
         target: newtab
         id: 7_1302_grafana
-      - title: Longhorn
-        description: Data visualised on dashboards
-        icon: hl-longhorn
-        url: https://longhorn.local.itcatgor.com
-        target: newtab
-        id: 8_1302_longhorn
       - title: Portainer
         description: Docker container management
         icon: hl-portainer
         url: https://portainer.local.itcatgor.com
         statusCheck: true
         statusCheckAllowInsecure: true
-        id: 9_1302_portainer
+        id: 8_1302_portainer
+      - title: Nginx Reverse Proxy
+        description: Nginx Reverse Proxy
+        icon: hl-nginx
+        url: http://nginx.local.itcatgor.com
+        target: newtab
+        statusCheck: true
+        id: 9_1302_nginx
       - title: Dozzle
         description: Docker container web log viewer
         icon: hl-dozzle
         url: http://dozzle.local.itcatgor.com
         target: newtab
         statusCheck: true
-        id: 10_1302_dozzle
+        id: 9_1302_dozzle
+  - name: VM CPU Usage
+    icon: fas fa-microchip
+    displayData:
+      rows: 2
+    widgets:
+      - type: iframe
+        useProxy: true
+        options:
+          url: >-
+            https://grafana.local.itcatgor.com/d-solo/Dp7Cd57Zza/proxmox-via-prometheus?orgId=1&refresh=5m&panelId=2
+          frameHeight: 500
+        id: 0_960_iframe
+  - name: VM Memory Usage
+    icon: fas fa-tachometer
+    widgets:
+      - type: iframe
+        useProxy: true
+        options:
+          url: >-
+            https://grafana.local.itcatgor.com/d-solo/Dp7Cd57Zza/proxmox-via-prometheus?orgId=1&refresh=5m&panelId=5
+          frameHeight: 500
+        id: 0_1361_iframe
+  - name: Container Memort Usage
+    icon: fas fa-tachometer
+    widgets:
+      - type: iframe
+        useProxy: true
+        options:
+          url: >-
+            https://grafana.local.itcatgor.com/d-solo/htoVWdxGt/docker-cadvisor?orgId=1&refresh=5m&panelId=16
+          frameHeight: 500
+        id: 0_2124_iframe
