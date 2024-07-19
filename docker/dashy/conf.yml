@@ -107,17 +107,17 @@ sections:
       - title: Nginx Reverse Proxy
         description: Nginx Reverse Proxy
         icon: hl-nginx
-        url: http://nginx.local.itcatgor.com
+        url: https://nginx.local.itcatgor.com
         target: newtab
         statusCheck: true
-        id: 9_1302_nginx
+        id: 9_1302_nginxreverseproxy
       - title: Dozzle
         description: Docker container web log viewer
         icon: hl-dozzle
         url: http://dozzle.local.itcatgor.com
         target: newtab
         statusCheck: true
-        id: 9_1302_dozzle
+        id: 10_1302_dozzle
   - name: VM CPU Usage
     icon: fas fa-microchip
     displayData:

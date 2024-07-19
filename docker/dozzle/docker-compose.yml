@@ -3,7 +3,6 @@ services:
   dozzle:
     image: amir20/dozzle:latest
     volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-      - /path/to/certs:/certs
+      - /var/run/docker.sock:/var/run/docker.sock:ro
     ports:
       - 8081:8080
