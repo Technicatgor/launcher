@@ -100,14 +100,14 @@ sections:
       - title: Portainer
         description: Docker container management
         icon: hl-portainer
-        url: https://portainer.local.itcatgor.com
+        url: https://portainer.local.technicatgor.com
         statusCheck: true
         statusCheckAllowInsecure: true
         id: 8_1302_portainer
       - title: Nginx Reverse Proxy
         description: Nginx Reverse Proxy
         icon: hl-nginx
-        url: https://nginx.local.itcatgor.com
+        url: https://nginx.local.technicatgor.com
         target: newtab
         statusCheck: true
         id: 9_1302_nginxreverseproxy

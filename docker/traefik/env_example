@@ -1,0 +1,6 @@
+CF_API_EMAIL=your@email.com
+CF_DNS_API_TOKEN=
+TRAEFIK_DASHBOARD_CREDENTIALS=
+# create a user and pw string
+# sudo apt install apache2-utils
+# echo $(htpasswd -nB user) | sed -e s/\\$/\\$\\$/g
