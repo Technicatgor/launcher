@@ -1,7 +1,5 @@
 .gitignore
 *.env
 conf.yml
-docker/traefik/data
-usersfile
 config
 *.db
